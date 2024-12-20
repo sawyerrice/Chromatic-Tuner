@@ -1,0 +1,55 @@
+2024-12-12T12:23:34.804357600255-12:23:34 **** Incremental Build of configuration Debug for project lab3b_sw ****
+000-make all 
+000-'Building file: ../src/lcd.c'
+000-'Invoking: MicroBlaze gcc compiler'
+000-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/lcd.o" -IC:/Users/sawye/workspace/lab3a_hw/export/lab3a_hw/sw/lab3a_hw/standalone_domain/bspinclude/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/lcd.d" -MT"src/lcd.o" -o "src/lcd.o" "../src/lcd.c"
+000-../src/lcd.c: In function 'printCharBig':
+000/lab3b_sw/src/lcd.c321-1-1unused variable 'l' [-Wunused-variable]1-../src/lcd.c:321:18: warning: unused variable 'l' [-Wunused-variable]
+000-  321 |     int i, j, k, l, pixelIndex;
+000-      |                  ^
+000/lab3b_sw/src/lcd.c321-1-1unused variable 'k' [-Wunused-variable]1-../src/lcd.c:321:15: warning: unused variable 'k' [-Wunused-variable]
+000-  321 |     int i, j, k, l, pixelIndex;
+000-      |               ^
+000-../src/lcd.c: In function 'intToCharArray':
+000/lab3b_sw/src/lcd.c433-1-1implicit declaration of function 'snprintf' [-Wimplicit-function-declaration]1-../src/lcd.c:433:5: warning: implicit declaration of function 'snprintf' [-Wimplicit-function-declaration]
+000-  433 |     snprintf(buffer, bufferSize, "%d", num);
+000-      |     ^~~~~~~~
+000/lab3b_sw/src/lcd.c51-1-1include '<stdio.h>' or provide a declaration of 'snprintf'0-../src/lcd.c:51:1: note: include '<stdio.h>' or provide a declaration of 'snprintf'
+000-   50 | #include <math.h>
+000-  +++ |+#include <stdio.h>
+000-   51 | 
+000/lab3b_sw/src/lcd.c433-1-1incompatible implicit declaration of built-in function 'snprintf' [-Wbuiltin-declaration-mismatch]1-../src/lcd.c:433:5: warning: incompatible implicit declaration of built-in function 'snprintf' [-Wbuiltin-declaration-mismatch]
+000-  433 |     snprintf(buffer, bufferSize, "%d", num);
+000-      |     ^~~~~~~~
+000/lab3b_sw/src/lcd.c433-1-1include '<stdio.h>' or provide a declaration of 'snprintf'0-../src/lcd.c:433:5: note: include '<stdio.h>' or provide a declaration of 'snprintf'
+000-../src/lcd.c: In function 'formatNoteAndOctave':
+000/lab3b_sw/src/lcd.c438-1-1implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]1-../src/lcd.c:438:5: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+000-  438 |     sprintf(result, "%s%d", note, octave);
+000-      |     ^~~~~~~
+000/lab3b_sw/src/lcd.c438-1-1include '<stdio.h>' or provide a declaration of 'sprintf'0-../src/lcd.c:438:5: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+000/lab3b_sw/src/lcd.c438-1-1incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]1-../src/lcd.c:438:5: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+000/lab3b_sw/src/lcd.c438-1-1include '<stdio.h>' or provide a declaration of 'sprintf'0-../src/lcd.c:438:5: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+000-../src/lcd.c: In function 'drawNoteInfo':
+000/lab3b_sw/src/lcd.c481-1-1suggest parentheses around assignment used as truth value [-Wparentheses]1-../src/lcd.c:481:12: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+000-  481 |         if(prevNote = 1 || note == 4 || note == 6 || note == 9 || prevNote ==11){
+000-      |            ^~~~~~~~
+000-../src/lcd.c: In function 'drawSpectro':
+000/lab3b_sw/src/lcd.c614-1-1unused variable 'binSpacing' [-Wunused-variable]1-../src/lcd.c:614:15: warning: unused variable 'binSpacing' [-Wunused-variable]
+000-  614 |         float binSpacing = sampleFreq/SAMPLES;
+000-      |               ^~~~~~~~~~
+000-'Finished building: ../src/lcd.c'
+000-' '
+000-'Building target: lab3b_sw.elf'
+000-'Invoking: MicroBlaze gcc linker'
+000-mb-gcc -Wl,-T -Wl,../src/lscript.ld -LC:/Users/sawye/workspace/lab3a_hw/export/lab3a_hw/sw/lab3a_hw/standalone_domain/bsplib/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -Wl,--gc-sections -o "lab3b_sw.elf"  ./src/bsp.o ./src/complex.o ./src/fft.o ./src/fonts.o ./src/lab2a.o ./src/lcd.o ./src/lcd_test.o ./src/main.o ./src/note.o ./src/qepn.o ./src/qfn.o ./src/qfn_init.o ./src/stream_grabber.o ./src/trig.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+000-'Finished building target: lab3b_sw.elf'
+000-' '
+000-'Invoking: MicroBlaze Print Size'
+000-mb-size lab3b_sw.elf  |tee "lab3b_sw.elf.size"
+000-   text	   data	    bss	    dec	    hex	filename
+000- 128048	   6268	 303676	 437992	  6aee8	lab3b_sw.elf
+000-'Finished building: lab3b_sw.elf.size'
+000-' '
+00255-
+12:23:35 Build Finished (took 877ms)
+
